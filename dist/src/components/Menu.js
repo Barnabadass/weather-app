@@ -1,0 +1,39 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
+const react_redux_1 = require("react-redux");
+const action_creators_1 = require("../action_creators/action_creators");
+const Menu = ({ theme, color, showCelsius, toggleMenu, changeThemeLight, changeThemeDark, changeTempUnits }) => react_1.default.createElement("div", { id: "menu", style: { background: theme, color: color } },
+    react_1.default.createElement("button", { className: "top-buttons", onClick: toggleMenu, id: "bars-button" },
+        react_1.default.createElement("i", { className: "fa fa-bars fa-buttons", style: { color: color } })),
+    react_1.default.createElement("h2", { id: "theme" }, "Theme:"),
+    react_1.default.createElement("label", null,
+        react_1.default.createElement("input", { type: "radio", id: "light", checked: theme === "light", onClick: changeThemeLight }),
+        "Light"),
+    react_1.default.createElement("label", null,
+        react_1.default.createElement("input", { type: "radio", id: "dark", checked: theme === "dark", onClick: changeThemeDark }),
+        "Dark"),
+    react_1.default.createElement("h2", { id: "temp" }, "Temperature:"),
+    react_1.default.createElement("label", null,
+        react_1.default.createElement("input", { type: "radio", id: "celsius", checked: showCelsius, onClick: () => changeTempUnits("Celsius") }),
+        "Celsius"),
+    react_1.default.createElement("label", null,
+        react_1.default.createElement("input", { type: "radio", id: "fahr", checked: !showCelsius, onClick: () => changeTempUnits("Fahrenheit") }),
+        "Fahrenheit"));
+function mapDispatchToProps(dispatch) {
+    return {
+        toggleMenu: () => dispatch(action_creators_1.toggleMenu()),
+        changeThemeLight: () => dispatch(action_creators_1.changeThemeLight()),
+        changeThemeDark: () => dispatch(action_creators_1.changeThemeDark())
+    };
+}
+function mapStateToProps(state, props) {
+    return {
+        theme: state.theme
+    };
+}
+const ConnectedMenu = react_redux_1.connect(mapStateToProps, mapDispatchToProps)(Menu);
+exports.default = ConnectedMenu;

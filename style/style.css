@@ -1,0 +1,245 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+#app {
+  position: relative;  
+  width: 600px; 
+  height: 818px;
+  margin: auto;
+  text-align: center; 
+  z-index: 1;
+}
+
+#main {
+  height: 818px;
+}
+
+#top {
+  width: 600px;  
+  height: 40px; 
+  display: flex; 
+  justify-content: space-between; 
+  z-index: 1;
+}
+
+.top-buttons {
+  background-color: transparent;
+  border: 0px;  
+  height: 30px; 
+  width: 30px;  
+  padding-top: 10px;
+} 
+
+.fa-buttons {
+  color: white; 
+  margin-right: 10px;
+  margin-left: 10px;
+  transform: scale(2);
+}
+
+#search-button {
+  margin-right: 20px;
+}
+
+#search-input {
+  background-color: transparent; 
+  border: 0px; 
+  width: 80%;
+  color: white; 
+  font-size: 16px; 
+  margin-left: 20px;
+}
+
+.daily {
+  height: 200px;
+  text-align: center;
+}
+
+.temperature {
+  font-size: 34px;
+}
+
+.main-info {
+  display: flex; 
+  align-items: baseline; 
+  position: relative; 
+  margin: auto; 
+  z-index: 1;
+  width: 170px; 
+  justify-content: space-between; 
+  margin-top: 0px;
+}
+
+#wind-info, #sun-info { 
+  display: flex; 
+  position: relative; 
+  margin: auto; 
+  width: 220px;   
+  justify-content: 
+  space-between; 
+  margin-top: -30px; 
+  font-size: 24px; 
+  z-index: 1;
+}
+
+#sun-info {
+  display: flex; 
+  position: relative; 
+  margin: auto; 
+  width: 370px;
+  justify-content: space-between;  
+  font-size: 20px; 
+  margin-top: -10px;
+}
+
+#forc {
+  margin-top: 80px; 
+  font-size: 30px; 
+  text-transform: capitalize;
+}
+
+.forec {
+  display: flex; 
+  justify-content: space-around; 
+  height: 40px;
+}
+
+.main-weather-forec {
+  display: flex; 
+  width: 90px; 
+  justify-content: space-between;
+}
+
+#forecastDiv {
+  height: 400px; 
+  overflow: scroll; 
+  overflow-x: hidden; 
+}
+
+#forecastDiv::-webkit-scrollbar {
+  display: none;
+}
+
+rect:hover {
+  fill: lightblue;
+}
+
+#menu {
+  width: 600px; 
+  height: 818px; 
+  position: absolute; 
+  z-index: 2; 
+  top: 0px; 
+}
+
+#bars-button {
+    position: relative; 
+    left: -285px;
+}
+#temp {
+  margin-top: 30px;
+}
+
+#fahr, #dark {
+  margin-left: 20px;
+}
+
+#introduction, #locationVars {
+  width: 600px; 
+  height: 718px; 
+  position: absolute; 
+  z-index: 2; 
+  top: 0px; 
+  background-color: white; 
+  color: blue; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  padding-top: 100px; 
+  align-items: center;
+}
+
+#map {
+  width: 600px; 
+  height: 600px; 
+  display: block;
+}
+
+#findOnMap {
+  width: 150px; 
+  margin-top: 10px; 
+  background-color: white;
+  color: blue; 
+  border-radius: 20px; 
+  height: 40px; 
+  border: 3px solid blue; 
+  font-size: 16px;
+}
+
+l {
+  width: 150px; 
+  margin-top: 10px; 
+  background-color: white;
+  color: blue; 
+  border-radius: 20px; 
+  height: 40px; border: 
+  3px solid blue; 
+  font-size: 16px;
+}
+
+.locationVariantButton {
+  width: 100px; 
+  height: 40px; 
+  border-radius: 20px; 
+  background-color: blue; 
+  color: white; 
+  border: 1px solid blue; 
+  font-size: 14px; 
+  position: absolute;
+}
+
+.oops {
+  position: absolute;
+  width: 600px;
+  height: 160px;
+  text-align: center; 
+  font-size: 24px; 
+  background: inherit; 
+  top: 0px; 
+  padding-top: 100px; 
+  z-index: 3;
+ border-bottom: 1px solid;
+}
+
+#mapOpen {
+  margin-left: 10px;
+}
+
+#cancel {
+  width: 150px; 
+  margin-top: 10px;
+  background-color: white;
+  color: red; 
+  border-radius: 20px; 
+  height: 40px; 
+  border: 3px solid red; 
+  font-size: 16px;
+}
+
+#mapDiv {
+  width: 600px; 
+  height: 818px; 
+  position: absolute; 
+  z-index: 2; 
+  top: 0px; 
+  background-color: white; 
+  color: blue; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  padding-top: 30px; 
+  align-items: center;
+}
