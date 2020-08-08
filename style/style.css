@@ -6,23 +6,30 @@ body {
 
 #app {
   position: relative;  
-  width: 600px; 
-  height: 818px;
+  width: 100vw; 
+  height: 100vh;
+  min-height: 900px;
   margin: auto;
   text-align: center; 
   z-index: 1;
 }
 
 #main {
-  height: 818px;
+  height: 100%;
 }
 
 #top {
-  width: 600px;  
-  height: 40px; 
+  width: 100%;  
+  height: 6%; 
   display: flex; 
   justify-content: space-between; 
+  align-items: center;
+  top: 5px;
   z-index: 1;
+}
+
+#top input {
+  font-size: 34px;
 }
 
 .top-buttons {
@@ -30,18 +37,14 @@ body {
   border: 0px;  
   height: 30px; 
   width: 30px;  
+  margin-right: 3%;
+  margin-left: 3%;
   padding-top: 10px;
 } 
 
 .fa-buttons {
   color: white; 
-  margin-right: 10px;
-  margin-left: 10px;
-  transform: scale(2);
-}
-
-#search-button {
-  margin-right: 20px;
+  transform: scale(4);
 }
 
 #search-input {
@@ -54,12 +57,24 @@ body {
 }
 
 .daily {
-  height: 200px;
+  height: 30%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  margin-top: 30px;
+}
+
+#cityname {
+  font-size: 44px; 
+  margin-bottom: 0px;
+  font-weight: 600;
 }
 
 .temperature {
-  font-size: 34px;
+  font-size: 40px;
+  text-align: left;
 }
 
 .main-info {
@@ -68,58 +83,82 @@ body {
   position: relative; 
   margin: auto; 
   z-index: 1;
-  width: 170px; 
-  justify-content: space-between; 
+  width: 30%; 
+  justify-content: center; 
   margin-top: 0px;
+  text-align: left;
 }
+
+.main-info p, .main-info i {
+  margin-left: 50px;
+  margin-right: 0%;
+}
+
 
 #wind-info, #sun-info { 
   display: flex; 
   position: relative; 
   margin: auto; 
-  width: 220px;   
-  justify-content: 
-  space-between; 
+  width: 100%;   
+  justify-content: center; 
   margin-top: -30px; 
-  font-size: 24px; 
+  font-size: 38px; 
   z-index: 1;
 }
 
+#wind-info p {
+  margin: 2%;
+}
+
 #sun-info {
-  display: flex; 
-  position: relative; 
-  margin: auto; 
-  width: 370px;
-  justify-content: space-between;  
-  font-size: 20px; 
+  justify-content: space-around;  
   margin-top: -10px;
+}
+
+.sun-time {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.sun-time .wi {
+  transform: scale(2);
 }
 
 #forc {
   margin-top: 80px; 
-  font-size: 30px; 
-  text-transform: capitalize;
+  font-size: 44px; 
 }
 
 .forec {
   display: flex; 
   justify-content: space-around; 
-  height: 40px;
+  height: 60px;
+  font-size: 30px;
+}
+
+.forec .fa-buttons {
+  transform: scale(2);
 }
 
 .main-weather-forec {
   display: flex; 
-  width: 90px; 
+  width: 20%; 
   justify-content: space-between;
 }
 
-#forecastDiv {
-  height: 400px; 
+#forecast-wrapper {
+  height: 49%;
+}
+
+#forecast-div {
+  height: 87%;
   overflow: scroll; 
   overflow-x: hidden; 
 }
 
-#forecastDiv::-webkit-scrollbar {
+#forecast-div::-webkit-scrollbar {
   display: none;
 }
 
@@ -128,28 +167,41 @@ rect:hover {
 }
 
 #menu {
-  width: 600px; 
-  height: 818px; 
+  width: 100%; 
+  height: 100%; 
   position: absolute; 
   z-index: 2; 
-  top: 0px; 
+  top: 0px;
+  font-size: 34px; 
 }
 
-#bars-button {
-    position: relative; 
-    left: -285px;
+#menu-nav {
+  width: 100%;  
+  height: 6%; 
+  display: flex; 
+  justify-content: flex-start; 
+  align-items: center;
+  top: 5px;
+  z-index: 1;
 }
-#temp {
-  margin-top: 30px;
+
+#theme, #temp {
+  font-size: 40px;
+  margin-top: 50px;
 }
 
 #fahr, #dark {
   margin-left: 20px;
 }
 
+#menu input {
+  transform: scale(2);
+  margin-right: 20px;
+}
+
 #introduction, #locationVars {
-  width: 600px; 
-  height: 718px; 
+  width: 100%; 
+  height: 100%; 
   position: absolute; 
   z-index: 2; 
   top: 0px; 
@@ -157,89 +209,110 @@ rect:hover {
   color: blue; 
   display: flex; 
   flex-direction: column; 
-  justify-content: flex-start; 
-  padding-top: 100px; 
+  justify-content: space-around; 
+  align-items: center;
+}
+
+#directions {
+  font-size: 40px;
+}
+
+#map-div {
+  width: 100%; 
+  height: 100%; 
+  position: absolute; 
+  z-index: 2; 
+  top: 0px; 
+  background-color: white; 
+  color: blue; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-around; 
   align-items: center;
 }
 
 #map {
-  width: 600px; 
-  height: 600px; 
+  width: 100%; 
+  height: 60%; 
   display: block;
 }
 
-#findOnMap {
-  width: 150px; 
+#map-screen-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  min-width: 200px;
+  height: 15%;
+  justify-content: space-around;
+}
+
+#map-screen-buttons button {
+  font-size: 40px;
+  padding: 5px;
+  border-radius: 20px;
   margin-top: 10px; 
   background-color: white;
+}
+
+#find-on-map {
   color: blue; 
-  border-radius: 20px; 
-  height: 40px; 
   border: 3px solid blue; 
-  font-size: 16px;
 }
 
-l {
-  width: 150px; 
-  margin-top: 10px; 
-  background-color: white;
-  color: blue; 
-  border-radius: 20px; 
-  height: 40px; border: 
-  3px solid blue; 
-  font-size: 16px;
-}
-
-.locationVariantButton {
-  width: 100px; 
-  height: 40px; 
-  border-radius: 20px; 
-  background-color: blue; 
-  color: white; 
-  border: 1px solid blue; 
-  font-size: 14px; 
-  position: absolute;
-}
-
-.oops {
-  position: absolute;
-  width: 600px;
-  height: 160px;
-  text-align: center; 
-  font-size: 24px; 
-  background: inherit; 
-  top: 0px; 
-  padding-top: 100px; 
-  z-index: 3;
- border-bottom: 1px solid;
+#cancel-button {
+  color: red; 
+  border: 3px solid red; 
 }
 
 #mapOpen {
   margin-left: 10px;
 }
 
-#cancel {
-  width: 150px; 
-  margin-top: 10px;
-  background-color: white;
-  color: red; 
-  border-radius: 20px; 
-  height: 40px; 
-  border: 3px solid red; 
-  font-size: 16px;
+#locationQuestion {
+  position: relative;
+  font-size: 44px;
 }
 
-#mapDiv {
-  width: 600px; 
-  height: 818px; 
-  position: absolute; 
-  z-index: 2; 
-  top: 0px; 
-  background-color: white; 
-  color: blue; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: flex-start; 
-  padding-top: 30px; 
+#locationVariants {
+  position: relative;
+  width: 100%;
+  height: 30%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+  justify-items: center;
+  gap: 2%;
+}
+
+.locationVariantButton {
+  width: 90%;
+  height: 90%;
+  min-height: 80px;
+  border-radius: 20px;
+  background-color: blue; 
+  color: white; 
+  border: 1px solid blue; 
+  font-size: 32px; 
+  position: relative;
+  text-align: center;
+}
+
+#oops {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center; 
+  font-size: 50px; 
+  background: inherit; 
+  top: 0px; 
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#oops p {
+  width: 90%;
 }

@@ -4,9 +4,11 @@ import { changeScreen, changeThemeLight, changeThemeDark, changeTempUnits } from
 
 const Menu = ({ theme, tempUnits, toggleMenu, changeThemeLight, changeThemeDark, changeTempUnits }: MenuProps) =>
   <div id="menu" style={{ background: theme === "light" ? "white" : "linear-gradient(90deg, #4b6cb7, #182848)", color: theme === "light" ? "black" : "white" }}>
-    <button className="top-buttons" onClick={toggleMenu} id="bars-button">
-      <i className="fa fa-bars fa-buttons" style={{ color: theme === "light" ? "black" : "white" }} />
-    </button>
+    <nav id="menu-nav">
+      <button className="top-buttons" onClick={toggleMenu} id="bars-button">
+        <i className="fa fa-bars fa-buttons" style={{ color: theme === "light" ? "black" : "white" }} />
+      </button>
+    </nav>
     <h2 id="theme">Theme:</h2>
     <label><input type="radio" id="light" checked={theme === "light"} onClick={changeThemeLight} />Light</label>
     <label><input type="radio" id="dark" checked={theme === "dark"} onClick={changeThemeDark} />Dark</label>
@@ -25,10 +27,10 @@ function mapDispatchToProps(dispatch: any) {
 }
 
 function mapStateToProps(state: any, props: any) {
-  return { 
+  return {
     theme: state.theme,
     tempUnits: state.tempUnits
-   };
+  };
 }
 
 const ConnectedMenu = connect(mapStateToProps, mapDispatchToProps)(Menu);

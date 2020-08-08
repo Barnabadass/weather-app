@@ -2,9 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 
 const Forecast = ({ forecast, tempUnits, city }: ForecastProps) =>
-  <div>
+  <div id="forecast-wrapper">
     <h2 id='forc'>5 day forecast for {city}</h2>
-    <div id='forecastDiv'>
+    <div id='forecast-div'>
       {forecast.map((item: ForecastItem) =>
         <div className='forec'>
           <p>

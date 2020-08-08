@@ -13,8 +13,8 @@ const Map = withScriptjs(withGoogleMap((props: any) =>
 ));
 
 const MapScreen = ({ findOnMap, setMarker, toggleMap, lat, lon }: MapScreenProps) =>
-  <div id="mapDiv">
-    <h1 id="directions">Point at the place you want to get the weather for</h1>
+  <div id="map-div">
+    <h1 id="directions">Point at the place you want the weather for</h1>
     <Map
       googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWC26M99rjI11jofyE_NbEJg2f6INo0FI"
       containerElement={<div id="map" />}
@@ -24,10 +24,11 @@ const MapScreen = ({ findOnMap, setMarker, toggleMap, lat, lon }: MapScreenProps
       lat={lat}
       lon={lon}
     />
-    <button id="findOnMap" onClick={findOnMap}>I got this!</button>
-    <button id="cancel" onClick={toggleMap}>Cancel</button>
+    <div id="map-screen-buttons">
+      <button id="find-on-map" onClick={findOnMap}>I got this!</button>
+      <button id="cancel-button" onClick={toggleMap}>Go back</button>
+    </div>
   </div>
-
 
 function mapDispatchToProps(dispatch: any) {
   return {

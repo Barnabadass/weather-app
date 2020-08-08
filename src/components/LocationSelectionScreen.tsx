@@ -10,10 +10,6 @@ const LocationSelectionScreen = ({ cityList, screen, getWeather }: LocationSelec
       {cityList.map((cityname: string, index: number) =>
         <button
           className="locationVariantButton"
-          style={{
-            left: (250 + Math.cos((index / 6) * 2 * Math.PI) * 160) + "px",
-            top: (400 + Math.sin((index / 6) * 2 * Math.PI) * 160) + "px"
-          }}
           onClick={() => getWeather(cityname)}
         >
           {cityname}

@@ -10,14 +10,12 @@ const WIND_DIRS: [number, number, string][] = [[-1, 11.25, "North"], [11.25, 33,
 
 const CurrentWeather = ({ main, city, windDir, sunrise, sunset, windSpeed, temp, tempUnits }: CurrentWeatherProps) =>
   <div className="daily">
-    <p style={{ fontSize: 26, marginBottom: -10, fontWeight: "bold" }}>{city}</p>
+    <p id="cityname">{city}</p>
     <div className="main-info">
-      <p>
-        {main === "Snow" && <i className='wi wi-snow fa-buttons'></i>}
-        {main === "Rain" && <i className='wi wi-rain fa-buttons'></i>}
-        {main === "Clear" && <i className='wi wi-day-sunny fa-buttons'></i>}
-        {main === "Clouds" && <i className='wi wi-cloudy fa-buttons'></i>}
-      </p>
+      {main === "Snow" && <i className='wi wi-snow fa-buttons'></i>}
+      {main === "Rain" && <i className='wi wi-rain fa-buttons'></i>}
+      {main === "Clear" && <i className='wi wi-day-sunny fa-buttons'></i>}
+      {main === "Clouds" && <i className='wi wi-cloudy fa-buttons'></i>}
       <p className="temperature">
         {tempUnits === "Celsius" ? (temp - 273.15).toFixed(1) + " °C" : ((temp - 273.15) * 9 / 5 + 32).toFixed(1) + " °F"}
       </p>
@@ -29,12 +27,14 @@ const CurrentWeather = ({ main, city, windDir, sunrise, sunset, windSpeed, temp,
       </p>
     </div>
     <div id="sun-info">
-      <p className="pie">
-        <i className='wi wi-sunrise fa-buttons'></i>&nbsp;&nbsp;&nbsp;&nbsp;{new Date(sunrise).toString().split(" ").slice(4, 5).join(" ")}
-      </p>
-      <p className="pie">
-        <i className='wi wi-sunset fa-buttons'></i>&nbsp;&nbsp;&nbsp;&nbsp;{new Date(sunset).toString().split(" ").slice(4, 5).join(" ")}
-      </p>
+      <div className="sun-time">
+        <i className='wi wi-sunrise fa-buttons'></i>
+        <p className="pie">{new Date(sunrise).toString().split(" ").slice(4, 5).join(" ")}</p>
+      </div>
+      <div className="sun-time">
+        <i className='wi wi-sunset fa-buttons'></i>
+        <p className="pie">{new Date(sunset).toString().split(" ").slice(4, 5).join(" ")}</p>
+      </div>
     </div>
   </div>
 

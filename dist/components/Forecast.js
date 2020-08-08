@@ -5,11 +5,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
 const react_redux_1 = require("react-redux");
-const Forecast = ({ forecast, tempUnits, city }) => react_1.default.createElement("div", null,
+const Forecast = ({ forecast, tempUnits, city }) => react_1.default.createElement("div", { id: "forecast-wrapper" },
     react_1.default.createElement("h2", { id: 'forc' },
         "5 day forecast for ",
         city),
-    react_1.default.createElement("div", { id: 'forecastDiv' }, forecast.map((item) => react_1.default.createElement("div", { className: 'forec' },
+    react_1.default.createElement("div", { id: 'forecast-div' }, forecast.map((item) => react_1.default.createElement("div", { className: 'forec' },
         react_1.default.createElement("p", null, item['dt_txt'].replace(/(\d{4})-(\d{2})-(\d{2})\s(\d{2}):(\d{2}):(\d{2})/, (nil, one, two, three, four, five, six) => {
             two = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][parseInt(two) - 1];
             return three + " " + two + " " + one + " " + four + ":" + five;
