@@ -119,11 +119,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 30%;
 }
 
 .sun-time .wi {
   transform: scale(2);
+  margin-right: 40px;
 }
 
 #forc {
@@ -149,11 +149,11 @@ body {
 }
 
 #forecast-wrapper {
-  height: 49%;
+  height: 50%;
 }
 
 #forecast-div {
-  height: 87%;
+  height: 84%;
   overflow: scroll; 
   overflow-x: hidden; 
 }
